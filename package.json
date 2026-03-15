@@ -1,0 +1,36 @@
+{
+  "name": "tree-sitter-xact",
+  "version": "0.0.1",
+  "description": "Tree-sitter grammar for the xact language",
+  "main": "bindings/node",
+  "keywords": ["tree-sitter", "parser", "xact", "xval"],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.0.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.24.0"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "parse": "tree-sitter parse",
+    "test": "tree-sitter test"
+  }
+}

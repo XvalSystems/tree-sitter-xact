@@ -1,0 +1,21 @@
+{
+  "grammars": [
+    {
+      "name": "xact",
+      "camelCase": false,
+      "scope": "source.xact",
+      "file-types": ["xact", "xval"],
+      "injection-regex": "^xact$",
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for the xact language",
+    "repository": "https://github.com/Xval/xval",
+    "links": {
+      "repository": "https://github.com/Xval/xval"
+    }
+  }
+}
