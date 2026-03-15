@@ -15,6 +15,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "config_declaration"
+        },
+        {
+          "type": "SYMBOL",
           "name": "input_declaration"
         },
         {
@@ -24,6 +28,30 @@
         {
           "type": "SYMBOL",
           "name": "vtable_declaration"
+        }
+      ]
+    },
+    "config_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "config"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "simple_property"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
@@ -1152,11 +1180,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "True"
+          "value": "true"
         },
         {
           "type": "STRING",
-          "value": "False"
+          "value": "false"
         }
       ]
     },

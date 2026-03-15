@@ -250,6 +250,21 @@
     }
   },
   {
+    "type": "config_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "simple_property",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "declaration_body",
     "named": true,
     "fields": {},
@@ -637,6 +652,10 @@
       "required": false,
       "types": [
         {
+          "type": "config_declaration",
+          "named": true
+        },
+        {
           "type": "input_declaration",
           "named": true
         },
@@ -943,14 +962,6 @@
     "named": false
   },
   {
-    "type": "False",
-    "named": false
-  },
-  {
-    "type": "True",
-    "named": false
-  },
-  {
     "type": "[",
     "named": false
   },
@@ -976,12 +987,20 @@
     "named": false
   },
   {
+    "type": "config",
+    "named": false
+  },
+  {
     "type": "date",
     "named": false
   },
   {
     "type": "escape_sequence",
     "named": true
+  },
+  {
+    "type": "false",
+    "named": false
   },
   {
     "type": "float",
@@ -1026,6 +1045,10 @@
   },
   {
     "type": "table",
+    "named": false
+  },
+  {
+    "type": "true",
     "named": false
   },
   {

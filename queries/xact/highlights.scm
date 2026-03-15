@@ -4,20 +4,18 @@
 
 ; ── Keywords ─────────────────────────────────────────────────
 [
+  "config"
   "input"
   "table"
   "vtable"
 ] @keyword
 
-[
-  "columns"
-  "nrows"
-  "type"
-  "source"
-  "name"
-  "distinct"
-  "params"
-] @keyword.modifier
+["columns"] @keyword.modifier
+
+; Property keys that act as keywords (not grammar-level tokens)
+(simple_property
+  key: (identifier) @keyword.modifier
+  (#match? @keyword.modifier "^(nrows|type|source|name|distinct|params|vtables)$"))
 
 ; ── self ─────────────────────────────────────────────────────
 (self) @variable.builtin
@@ -97,6 +95,12 @@
 
 (vtable_declaration
   name: (identifier) @type.definition)
+
+; ── Config properties ───────────────────────────────────────
+(config_declaration
+  (simple_property
+    key: (identifier) @keyword.modifier
+    (#match? @keyword.modifier "^(out_dir|out_ft|audit|write_all_vtables|input_dir|write_all_inputs|out_name)$")))
 
 ; ── Column definitions ───────────────────────────────────────
 (column_definition

@@ -34,12 +34,20 @@ module.exports = grammar({
     source_file: $ => repeat($._declaration),
 
     _declaration: $ => choice(
+      $.config_declaration,
       $.input_declaration,
       $.table_declaration,
       $.vtable_declaration,
     ),
 
     // ── Top-level declarations ──────────────────────────────────
+
+    config_declaration: $ => seq(
+      'config',
+      '{',
+      repeat($.simple_property),
+      '}',
+    ),
 
     input_declaration: $ => seq(
       'input',
@@ -234,7 +242,7 @@ module.exports = grammar({
       seq("'", /[^']*/, "'", 'n'),
     ))),
 
-    boolean: $ => choice('True', 'False'),
+    boolean: $ => choice('true', 'false'),
 
     self: $ => 'self',
 
