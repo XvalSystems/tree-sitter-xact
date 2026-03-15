@@ -3,14 +3,13 @@
 (block_comment) @comment
 
 ; ── Keywords ─────────────────────────────────────────────────
-[
-  "config"
-  "input"
-  "table"
-  "vtable"
-] @keyword
+(config_declaration "config" @keyword)
+(input_declaration "input" @keyword)
+(table_declaration "table" @keyword)
+(vtable_declaration "vtable" @keyword)
+(vtable_block "vtable" @keyword)
 
-["columns"] @keyword.modifier
+(columns_block "columns" @keyword.modifier)
 
 ; Property keys that act as keywords (not grammar-level tokens)
 (simple_property
