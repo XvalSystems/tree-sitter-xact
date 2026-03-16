@@ -28,7 +28,7 @@
 (vtable_block (identifier) @type)
 
 ; ─── Config keys ───────────────────────────────────────────────────
-(config_key) @keyword
+(config_key) @variable.builtin
 
 ; ─── Property keywords ─────────────────────────────────────────────
 (nrows_property "nrows" @keyword)
